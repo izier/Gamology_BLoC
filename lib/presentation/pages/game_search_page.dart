@@ -29,6 +29,7 @@ class GameSearchPage extends StatelessWidget{
               decoration: const InputDecoration(
                 hintText: 'Search game',
                 prefixIcon: Icon(Icons.search),
+                prefixIconColor: Colors.white,
                 border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
               ),
               textInputAction: TextInputAction.search,

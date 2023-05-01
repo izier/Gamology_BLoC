@@ -13,9 +13,32 @@ class GameRepositoryImpl implements GameRepository {
   GameRepositoryImpl({required this.dataSource});
 
   @override
-  Future<Either<Failure, List<Game>>> getGameList(int page) async {
+  Future<Either<Failure, List<Game>>> getPopularGameList(int page) async {
     try {
-      final result = await dataSource.getGameList(page);
+      final result = await dataSource.getPopularGameList(page);
+      return Right(result.map((model) => model.toEntity()).toList());
+    } on ServerException {
+      return Left(ServerFailure(''));
+    } on SocketException {
+      return Left(ConnectionFailure("Failed to connect to the network"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Game>>> getTopRatedGameList(int page) async {
+    try {
+      final result = await dataSource.getTopRatedGameList(page);
+      return Right(result.map((model) => model.toEntity()).toList());
+    } on ServerException {
+      return Left(ServerFailure(''));
+    } on SocketException {
+      return Left(ConnectionFailure("Failed to connect to the network"));
+    }
+  }
+  @override
+  Future<Either<Failure, List<Game>>> getNewReleasedGameList(int page) async {
+    try {
+      final result = await dataSource.getNewReleasedGameList(page);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));

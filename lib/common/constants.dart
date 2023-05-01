@@ -18,36 +18,36 @@ class DarkTheme {
   );
 
   static const TextStyle headline1 = TextStyle(
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
   static const TextStyle headline2 = TextStyle(
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
   static const TextStyle headline3 = TextStyle(
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: FontWeight.bold,
     color: textColor,
   );
 
   static const TextStyle headline4 = TextStyle(
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeight.bold,
     color: subtitleColor,
   );
 
   static const TextStyle bodyText1 = TextStyle(
-    fontSize: 16,
+    fontSize: 10,
     color: textColor,
   );
 
   static const TextStyle bodyText2 = TextStyle(
-    fontSize: 14,
+    fontSize: 10,
     color: subtitleColor,
   );
 

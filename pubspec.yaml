@@ -20,7 +20,9 @@ dependencies:
   get_it: ^7.2.0
   google_fonts: ^4.0.3
   cached_network_image: ^3.2.3
-  flutter_html: ^2.2.1
+  flutter_widget_from_html_core: ^0.10.0
+  intl: ^0.18.1
+  webview_flutter: ^4.0.1
 
 dev_dependencies:
   flutter_test:

@@ -32,9 +32,9 @@ class GameDetailModel extends Equatable{
   factory GameDetailModel.fromJson(Map<String, dynamic> json) => GameDetailModel(
     id: json["id"],
     name: json["name"],
-    released: json["released"],
+    released: json["released"] ?? 'No Data',
     description: json["description"],
-    backgroundImage: json["background_image"],
+    backgroundImage: json["background_image"] ?? 'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg',
     playtime: json["playtime"],
     genres: List<GenreModel>.from(
       json["genres"].map((x) => GenreModel.fromJson(x))

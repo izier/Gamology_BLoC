@@ -43,7 +43,8 @@ class GameCard extends StatelessWidget {
                   borderRadius: const BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
                   child: CachedNetworkImage(
                     imageUrl: game.backgroundImage,
-                    placeholder: (context, url) => const CircularProgressIndicator(),
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
                   ),
                 ),
               ),

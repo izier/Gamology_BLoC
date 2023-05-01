@@ -22,7 +22,7 @@ class GameModel extends Equatable{
   factory GameModel.fromJson(Map<String, dynamic> json) => GameModel(
     id: json["id"],
     name: json["name"],
-    backgroundImage: json["background_image"] ?? "",
+    backgroundImage: json["background_image"] ?? 'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg',
     platforms: json["platforms"] != null ? List<PlatformModel>.from(
       json["platforms"].map((x) => PlatformModel.fromJson(x))
     ) : [],

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:gamology_bloc/common/constants.dart';
 import 'package:gamology_bloc/domain/entities/game_detail.dart';
 import 'package:gamology_bloc/domain/entities/platform.dart';
@@ -130,7 +130,8 @@ class DetailContent extends StatelessWidget {
             Center(child: Text("Playtime: ${gameDetail.playtime} hours")),
             const SizedBox(height: 16),
             const Text("About", style: DarkTheme.headline2),
-            Html(data: gameDetail.description.replaceAll('â', "'")),
+            const SizedBox(height: 8),
+            HtmlWidget(gameDetail.description),
             const SizedBox(height: 8),
             const Text("Screenshots", style: DarkTheme.headline2),
             const SizedBox(height: 8),
