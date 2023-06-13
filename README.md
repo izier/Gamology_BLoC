@@ -30,7 +30,7 @@ Feel free to explore each dependency by clicking on the respective links above t
 
 ## Installation
 
-To run the t_sk app locally, ensure that you have Flutter SDK installed on your system. Then, follow these steps:
+To run the Gamology app locally, ensure that you have Flutter SDK installed on your system. Then, follow these steps:
 
 1. Clone the repository:
 
