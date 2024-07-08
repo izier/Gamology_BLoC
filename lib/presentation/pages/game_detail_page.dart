@@ -40,7 +40,6 @@ class GameDetailPage extends StatelessWidget{
           } else if (state is DetailError) {
             return Center(child: Text(state.message));
           } else if (state is DetailHasData) {
-            print('scenario 2 finished');
             return DetailContent(gameDetail: state.result, screenshots: screenshots);
           }
           return Container();
@@ -62,6 +61,7 @@ class DetailContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('scenario 2 finished');
     String publishers = '';
     String developers = '';
     String genres = '';
