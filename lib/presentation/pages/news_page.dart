@@ -11,6 +11,8 @@ class NewsPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    print('start scenario 3');
+
     int page = 1;
     bool isFirstPage = true;
 
@@ -40,7 +42,7 @@ class NewsPage extends StatelessWidget{
               } else if (state is GameNewsListError) {
                 return Expanded(
                   child: Center(
-                    child: Text(state.message, style: TextStyle(color: Colors.white),),
+                    child: Text(state.message, style: const TextStyle(color: Colors.white),),
                   ),
                 );
               } else if (state is GameNewsListHasData) {
@@ -50,6 +52,7 @@ class NewsPage extends StatelessWidget{
                     itemBuilder: (context, index) {
                       if (index < 15) {
                         final news = result[index];
+                        print('scenario 3 finished');
                         return NewsCard(news: news);
                       }
                       return SizedBox(
@@ -68,7 +71,7 @@ class NewsPage extends StatelessWidget{
                               child: InkWell(
                                 onTap: () {
                                   page--;
-                                  context.read<GetGameNewsListEvent>();
+                                  context.read<GameNewsListBloc>().add(GetGameNewsListEvent(page));
                                 },
                                 child: const Center(child: Text("<<")),
                               ),

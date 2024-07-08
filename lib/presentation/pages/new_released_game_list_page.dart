@@ -18,11 +18,6 @@ class _NewReleasedGameListPageState extends State<NewReleasedGameListPage> {
   bool isFirstPage = true;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16,left: 8, right: 8),

@@ -11,7 +11,7 @@ import 'package:gamology_bloc/presentation/bloc/game_detail/detail_state.dart';
 import 'package:gamology_bloc/presentation/widgets/add_platform_icons.dart';
 import 'package:collection/collection.dart';
 
-class GameDetailPage extends StatefulWidget{
+class GameDetailPage extends StatelessWidget{
   final List screenshots;
   final int id;
 
@@ -22,18 +22,9 @@ class GameDetailPage extends StatefulWidget{
   });
 
   @override
-  State<GameDetailPage> createState() => _GameDetailPageState();
-}
-
-class _GameDetailPageState extends State<GameDetailPage> {
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<DetailBloc>(context, listen: false).add(GetGameDetailEvent(widget.id));
-  }
-
-  @override
   Widget build(BuildContext context) {
+    context.read<DetailBloc>().add(GetGameDetailEvent(id));
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: DarkTheme.scaffoldBackgroundColor,
@@ -43,13 +34,14 @@ class _GameDetailPageState extends State<GameDetailPage> {
       body: BlocBuilder<DetailBloc, DetailState>(
         builder: (context, state) {
           if (state is DetailInitial) {
-            context.read<DetailBloc>().add(GetGameDetailEvent(widget.id));
+            context.read<DetailBloc>().add(GetGameDetailEvent(id));
           } else if (state is DetailLoading) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is DetailError) {
             return Center(child: Text(state.message));
           } else if (state is DetailHasData) {
-            return DetailContent(gameDetail: state.result, screenshots: widget.screenshots);
+            print('scenario 2 finished');
+            return DetailContent(gameDetail: state.result, screenshots: screenshots);
           }
           return Container();
         }
@@ -200,7 +192,7 @@ class DetailContent extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(platform!.requirements!.minimum!.replaceAll("Â®", "®")),
                 const SizedBox(height: 8),
-                Text(platform!.requirements!.recommended!.replaceAll("Â®", "®")),
+                Text(platform.requirements!.recommended!.replaceAll("Â®", "®")),
               ],
             ) : Container(),
           ],

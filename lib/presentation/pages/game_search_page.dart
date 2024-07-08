@@ -25,6 +25,7 @@ class GameSearchPage extends StatelessWidget{
             TextField(
               onChanged: (query) {
                 context.read<SearchBloc>().add(OnQueryChanged(query));
+                print('start scenario 2');
               },
               decoration: const InputDecoration(
                 hintText: 'Search game',

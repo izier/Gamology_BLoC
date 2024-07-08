@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('start scenario 1');
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => di.locator<SearchBloc>()),

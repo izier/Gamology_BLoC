@@ -107,6 +107,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 } else if (state is NewReleasedGameListHasData) {
                   final result = state.result;
+                  print('scenario 1 finished');
                   return SizedBox(
                     height: 200,
                     child: ListView.builder(

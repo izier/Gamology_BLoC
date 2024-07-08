@@ -15,7 +15,7 @@ abstract class GameDataSource {
 }
 
 class GameDataSourceImpl implements GameDataSource {
-  static const apiKey = "bfc324abd5744971b5019694d16fe07e";
+  static const apiKey = "3f4cb34acd3a4433a8bf4310f000d113";
   static const baseUrl = "https://api.rawg.io/api";
 
   final http.Client client;

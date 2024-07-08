@@ -17,9 +17,9 @@ class NewsRepositoryImpl implements NewsRepository {
       final result = await dataSource.getGameNewsList(page);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure("Failed to connect to the network"));
+      return const Left(ConnectionFailure("Failed to connect to the network"));
     }
   }
 }

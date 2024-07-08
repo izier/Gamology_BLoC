@@ -18,11 +18,6 @@ class _TopRatedGameListPageState extends State<TopRatedGameListPage> {
   bool isFirstPage = true;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16,left: 8, right: 8),

@@ -7,7 +7,7 @@ import 'package:gamology_bloc/presentation/pages/news_webview_page.dart';
 class NewsCard extends StatelessWidget {
   final News news;
 
-  const NewsCard({
+  const NewsCard({super.key, 
     required this.news
   });
 

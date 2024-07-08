@@ -18,9 +18,9 @@ class GameRepositoryImpl implements GameRepository {
       final result = await dataSource.getPopularGameList(page);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure("Failed to connect to the network"));
+      return const Left(ConnectionFailure("Failed to connect to the network"));
     }
   }
 
@@ -30,9 +30,9 @@ class GameRepositoryImpl implements GameRepository {
       final result = await dataSource.getTopRatedGameList(page);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure("Failed to connect to the network"));
+      return const Left(ConnectionFailure("Failed to connect to the network"));
     }
   }
   @override
@@ -41,9 +41,9 @@ class GameRepositoryImpl implements GameRepository {
       final result = await dataSource.getNewReleasedGameList(page);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure("Failed to connect to the network"));
+      return const Left(ConnectionFailure("Failed to connect to the network"));
     }
   }
 
@@ -53,9 +53,9 @@ class GameRepositoryImpl implements GameRepository {
       final result = await dataSource.searchGame(query);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure("Failed to connect to the network"));
+      return const Left(ConnectionFailure("Failed to connect to the network"));
     }
   }
 
@@ -65,9 +65,9 @@ class GameRepositoryImpl implements GameRepository {
       final result = await dataSource.getGameDetail(id);
       return Right(result.toEntity());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return const Left(ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure("Failed to connect to the network"));
+      return const Left(ConnectionFailure("Failed to connect to the network"));
     }
   }
 }

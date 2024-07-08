@@ -27,7 +27,7 @@ class PlatformModel extends Equatable{
     return Platform(
       id: id,
       name: name,
-      requirements: requirements == null ? null : requirements!.toEntity(),
+      requirements: requirements?.toEntity(),
     );
   }
 

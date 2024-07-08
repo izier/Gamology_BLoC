@@ -29,7 +29,7 @@ class GameModel extends Equatable{
     genres: List<GenreModel>.from(
       json["genres"].map((x) => GenreModel.fromJson(x))
     ),
-    screenshots: json["short_screenshots"].map((e) => e["image"]).toList(),
+    screenshots: json["short_screenshots"] != null ? json["short_screenshots"].map((e) => e["image"]).toList() : ['https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg'],
   );
 
   Game toEntity() {
@@ -39,7 +39,7 @@ class GameModel extends Equatable{
       backgroundImage: backgroundImage,
       platforms: platforms!.map((platform) => platform.toEntity()).toList(),
       genres: genres.map((genre) => genre.toEntity()).toList(),
-      screenshots: screenshots,
+      screenshots: screenshots!,
     );
   }
 

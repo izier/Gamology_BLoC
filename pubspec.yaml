@@ -12,22 +12,23 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  http: ^0.13.4
+  http: ^1.2.1
   flutter_bloc: ^8.0.1
   equatable: ^2.0.5
   dartz: ^0.10.1
   rxdart: ^0.27.7
   get_it: ^7.2.0
-  google_fonts: ^4.0.3
+  google_fonts: ^6.2.1
   cached_network_image: ^3.2.3
-  flutter_widget_from_html_core: ^0.10.0
-  intl: ^0.18.1
+  flutter_widget_from_html_core: ^0.14.11
+  intl: ^0.19.0
   webview_flutter: ^4.0.1
 
+  collection: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.2
 
 flutter:
   uses-material-design: true
